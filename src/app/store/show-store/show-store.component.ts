@@ -33,6 +33,14 @@ export class ShowStoreComponent implements OnInit {
     this.ActivateAddEditStoreComponent = true;
   }
 
+  deleteClick(item){
+    if(confirm("Are you sure you want to delete "+item.name+" ?")){
+      this.service.deleteStore(item.id).subscribe(res =>
+        alert(res.toString()));
+        this.refreshStoreList();
+    }
+  }
+
   closeClick(){
     this.ActivateAddEditStoreComponent = false;
     this.refreshStoreList();
