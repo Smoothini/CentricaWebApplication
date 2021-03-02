@@ -19,15 +19,15 @@ export class SharedService {
     return this.http.post(this.APIUrl+'/salesperson',val);
   }
 
-  updateSalesMan(val:any){
-    return this.http.put(this.APIUrl+'/salesperson',val);
+  updateSalesMan(id:string,val:any){
+    return this.http.put(this.APIUrl+'/salesperson/'+id,val);
   }
   
   deleteSalesMan(val:any){
     return this.http.delete(this.APIUrl+'/salesperson/'+val);
   }
 
-
+  
   
   getStoreList():Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/store');
