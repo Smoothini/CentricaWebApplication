@@ -14,13 +14,13 @@ export class AddEditStoreComponent implements OnInit {
   storeid:string;
   storename:string;
   storeinfo:string;
-  storedistrict:string;
+  storedistrictid:string;
 
   ngOnInit(): void {
     this.storeid = this.store.id;
     this.storename = this.store.name;
     this.storeinfo = this.store.info;
-    this.storedistrict = this.store.districtID;
+    this.storedistrictid = this.store.districtID;
   }
 
   addStore(){
@@ -28,7 +28,7 @@ export class AddEditStoreComponent implements OnInit {
       ID:this.storeid,
       Name:this.storename,
       Info:this.storeinfo,
-      DistrictID:this.storedistrict
+      DistrictID:this.storedistrictid
     };
     this.service.addStore(val).subscribe(res=>{
       alert(res.toString());
@@ -40,7 +40,7 @@ export class AddEditStoreComponent implements OnInit {
       ID:this.storeid,
       Name:this.storename,
       Info:this.storeinfo,
-      DistrictID:this.storedistrict
+      DistrictID:this.storedistrictid
     };
     this.service.updateStore(val.ID,val).subscribe(res=>{
       alert(res.toString());

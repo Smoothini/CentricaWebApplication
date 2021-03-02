@@ -51,7 +51,8 @@ export class ShowStoreComponent implements OnInit {
   refreshStoreList(){
     this.service.getStoreList().subscribe(data=>{
       this.StoreList=data;
-    })
+    });
+
   }
 
 }

@@ -29,6 +29,10 @@ export class SharedService {
 
   
   
+  getDistrict(val:any){
+    return this.http.get(this.APIUrl+'/district/'+val);
+  }
+
   getStoreList():Observable<any[]>{
     return this.http.get<any>(this.APIUrl+'/store');
   }
