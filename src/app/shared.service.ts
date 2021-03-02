@@ -48,4 +48,32 @@ export class SharedService {
   deleteStore(val:any){
     return this.http.delete(this.APIUrl+'/store/'+val);
   }
+
+
+
+  getDistrictList():Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/district');
+  }
+
+  addDistrict(val:any){
+    return this.http.post(this.APIUrl+'/district',val);
+  }
+
+  updateDistrict(id:string,val:any){
+    return this.http.put(this.APIUrl+'/district/'+id,val);
+  }
+  
+  deleteDistrict(val:any){
+    return this.http.delete(this.APIUrl+'/district/'+val);
+  }
+
+  appendSecondary(districtID, spID){
+    ////should be post
+    return this.http.get(this.APIUrl+'/district/appendssp/'+districtID+'/'+spID);
+  }
+  
+  removeSecondary(districtID, spID){
+    return this.http.delete(this.APIUrl+'/district/removessp/'+districtID+'/'+spID);
+  }
+
 }
