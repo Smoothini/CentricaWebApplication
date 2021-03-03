@@ -14,6 +14,9 @@ import {SharedService} from './shared.service';
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ShowDistrictComponent } from './district/show-district/show-district.component';
+import { SspDistrictComponent } from './district/ssp-district/ssp-district.component';
+import { AddEditDistrictComponent } from './district/add-edit-district/add-edit-district.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ShowStoreComponent,
     AddEditStoreComponent,
     ShowSpComponent,
-    AddEditSpComponent
+    AddEditSpComponent,
+    ShowDistrictComponent,
+    SspDistrictComponent,
+    AddEditDistrictComponent
   ],
   imports: [
     BrowserModule,

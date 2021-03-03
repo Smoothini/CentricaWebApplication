@@ -38,16 +38,15 @@ export class ShowSpComponent implements OnInit {
     if(confirm("Are you sure you want to delete "+item.name+" ?")){
       this.service.deleteSalesMan(item.id).subscribe(res => 
         alert(res.toString()));
-        this.refreshSpList();
     }
+    this.refreshSpList();
   }
 
+  
   closeClick(){
     this.ActivateAddEditSpComponent = false;
     this.refreshSpList();
   }
-
-
 
   refreshSpList(){
     this.service.getSalesManList().subscribe(data=>{

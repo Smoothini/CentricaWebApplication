@@ -68,12 +68,15 @@ export class SharedService {
   }
 
   appendSecondary(districtID, spID){
-    ////should be post
-    return this.http.get(this.APIUrl+'/district/appendssp/'+districtID+'/'+spID);
+    return this.http.post(this.APIUrl+'/district/appendsecondary/'+districtID+'/'+spID,null);
   }
   
   removeSecondary(districtID, spID){
-    return this.http.delete(this.APIUrl+'/district/removessp/'+districtID+'/'+spID);
+    return this.http.delete(this.APIUrl+'/district/removesecondary/'+districtID+'/'+spID);
+  }
+
+  getPossibleSecondary(districtID):Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/District/getPSSP/'+districtID);
   }
 
 }

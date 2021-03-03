@@ -1,0 +1,64 @@
+<tr>
+    <th>
+        <h5>Districts overview and operations.</h5>  
+        <h6>PSP: Primary Sales Person, SSP: Secondary Sales Person</h6>  
+    </th>
+</tr>
+
+<button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal" 
+(click)="addClick()" data-backdrop="static" data-keyboard="false">Create a new district</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeClick()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <app-ssp-district [district]="district" *ngIf="ActivateSSPComp"></app-ssp-district>
+            <app-add-edit-district [district]="district" *ngIf="ActivateAddEditComp"></app-add-edit-district>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>District ID</th>
+            <th>District Name</th>
+            <th>PSP Name</th>
+            <th>SSP Count</th>
+            <th>SSP Options</th>
+            <th>District options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of DistrictList">
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.pspName}}</td>
+            <td>{{dataItem.sspCount}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
+                (click)="appendSSPClick(dataItem)" data-backdrop="static" data-keyboard="false">Append</button>
+                <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
+                (click)="removeSSPClick(dataItem)" data-backdrop="static" data-keyboard="false">Remove</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
+                (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">Edit</button>
+                <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
+                (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
