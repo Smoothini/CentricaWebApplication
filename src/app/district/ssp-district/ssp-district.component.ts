@@ -11,8 +11,8 @@ export class SspDistrictComponent implements OnInit {
   constructor(private service:SharedService) { }
 
   @Input() district:any;
-  disID:string;
-  pspid:string;
+  disID:number;
+  pspid:number;
 
   ssps:any=[];
 

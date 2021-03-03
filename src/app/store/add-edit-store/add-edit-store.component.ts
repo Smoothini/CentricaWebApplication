@@ -14,7 +14,7 @@ export class AddEditStoreComponent implements OnInit {
   storeid:string;
   storename:string;
   storeinfo:string;
-  storedistrictid:string;
+  storedistrictid:number;
 
   ngOnInit(): void {
     this.storeid = this.store.id;
