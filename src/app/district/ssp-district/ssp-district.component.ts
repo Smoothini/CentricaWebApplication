@@ -12,17 +12,25 @@ export class SspDistrictComponent implements OnInit {
 
   @Input() district:any;
   disID:string;
+  pspid:string;
 
   ssps:any=[];
 
   ngOnInit(): void {
-    this.loadPossibleSecondary(this.district.id);
+    this.refreshLists();
   }
   
 
   loadPossibleSecondary(id:string){
     this.disID = this.district.id;
     this.service.getPossibleSecondary(id).subscribe((data:any) =>{
+      this.ssps=data
+    });
+  }
+
+  loadAvailableSecondary(id:string){
+    this.disID = this.district.id;
+    this.service.getAssignedSecondary(id).subscribe((data:any) =>{
       this.ssps=data;
     });
   }
@@ -37,6 +45,14 @@ export class SspDistrictComponent implements OnInit {
     this.service.removeSecondary(this.disID, id).subscribe(response =>{
       alert(response.toString());
     })
+  }
+
+  refreshLists(){
+    if (this.district.append)
+      this.loadPossibleSecondary(this.district.id);
+    else
+      this.loadAvailableSecondary(this.district.id);
+    this.pspid = this.district.pspid;
   }
 
 

@@ -4,19 +4,21 @@
             <th>Salesperson ID</th>
             <th>Salesperson Name</th>
             <th>Salesperson Surname</th>
-            <th>Append as secondary</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of ssps">
+            
             <td>{{dataItem.id}}</td>
             <td>{{dataItem.name}}</td>
             <td>{{dataItem.surname}}</td>
             <td>
                 <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
-                (click)="appendSecondary(dataItem.id)" data-backdrop="static" data-keyboard="false">Append</button>
+                (click)="appendSecondary(dataItem.id)" *ngIf="district.append" data-backdrop="static" data-keyboard="false">Append</button>
+                <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
+                (click)="removeSecondary(dataItem.id)" *ngIf="!district.append" data-backdrop="static" data-keyboard="false">Remove</button>
             </td>
-
         </tr>
     </tbody>
 </table>

@@ -79,4 +79,7 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl+'/District/getPSSP/'+districtID);
   }
 
+  getAssignedSecondary(districtID):Observable<any[]>{
+    return this.http.get<any>(this.APIUrl+'/District/getASSP/'+districtID);
+  }
 }

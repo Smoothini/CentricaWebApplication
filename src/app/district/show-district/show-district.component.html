@@ -7,6 +7,8 @@
 
 <button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal" 
 (click)="addClick()" data-backdrop="static" data-keyboard="false">Create a new district</button>
+<button type="button" class="btn btn-primary float-right m-2" data-toggle="modal" data-target="#exampleModal" 
+(click)="refreshDistrictList()" data-backdrop="static" data-keyboard="false">Refresh list</button>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,7 +52,7 @@
                 <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
                 (click)="appendSSPClick(dataItem)" data-backdrop="static" data-keyboard="false">Append</button>
                 <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 
-                (click)="removeSSPClick(dataItem)" data-backdrop="static" data-keyboard="false">Remove</button>
+                (click)="removeSSPClick(dataItem)" data-backdrop="static" data-keyboard="false">View/Remove</button>
             </td>
             <td>
                 <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#exampleModal" 

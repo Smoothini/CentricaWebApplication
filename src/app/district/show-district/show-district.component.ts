@@ -27,6 +27,7 @@ export class ShowDistrictComponent implements OnInit {
 
   appendSSPClick(item){
     this.district = item;
+    this.district.append = true;
     this.ModalTitle = "Append Secondary Salesperson/s";
     this.ActivateSSPComp = true;
     this.ActivateAddEditComp = false;
@@ -35,7 +36,8 @@ export class ShowDistrictComponent implements OnInit {
 
   removeSSPClick(item){
     this.district = item;
-    this.ModalTitle = "Remove Secondary Salesperson/s";
+    this.district.append = false;
+    this.ModalTitle = "View/Remove Secondary Salesperson/s";
     this.ActivateSSPComp = true;
     this.ActivateAddEditComp = false;
   }
